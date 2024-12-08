@@ -1,14 +1,14 @@
-/* <div id="parent">
-      <div id="child">
-        <h1>helow</h1>
-        <h1>hellow2</h1>
-       </div>
-  </div> */
+import React from "react"
+ import ReactDOM from "react-dom/client"
 
+const Title = <h1>hellow javascript</h1>;
 
-const heading = React.createElement("div", { id: "parent" }, React.createElement("div", { id: "child" }, [React.createElement("h1", {}, "hellow "), React.createElement("h2", {}, "hellow2")]));
-
-
+const Heading =(i)=> 
+(
+<div>
+  {Title}
+  <h2>{i}</h2>
+</div>);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading)
+root.render(Heading()) //this is heandling of render
 
