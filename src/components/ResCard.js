@@ -9,11 +9,13 @@ const ResCard = (props) => {
     <div className="res-card">
       <div className="Logos">
         <img className="res-logo" src={URL_CDN + cloudinaryImageId}></img>
-      </div>
+      </div >
+      <div className="rescardtext">
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating}</h4>
       <h4>{sla.slaString}</h4>
+      </div>
     </div>
   );
 };

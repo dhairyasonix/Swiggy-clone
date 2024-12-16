@@ -2,6 +2,8 @@
 import ResCard from "./ResCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
+import useonlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [ListOfres, setListOfres] = useState([]);
   const [filteredList, setfilteredList] = useState([]);
@@ -23,6 +25,9 @@ const Body = () => {
       json.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+const OnLinestatus = useonlineStatus();
+if (OnLinestatus=== false) return <h1>please check your internet sonnection</h1>
+
   //condisnal statment
   return ListOfres.length === 0 ? (
     <Shimmer />
@@ -57,7 +62,7 @@ const Body = () => {
             const filterdList = ListOfres.filter(
               (res) => res.info.avgRating > 4.2
             );
-            setListOfres(filterdList);
+            setfilteredList(filterdList);
           }}
         >
           Top rated restrunt
@@ -65,7 +70,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredList.map((restrunt) => (
-          <ResCard key={restrunt.info.id} resData={restrunt} />
+          <Link key={restrunt.info.id} to={"resturant/"+restrunt.info.id}><ResCard  resData={restrunt} /></Link>
         ))}
       </div>
     </div>

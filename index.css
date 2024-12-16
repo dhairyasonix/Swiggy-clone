@@ -32,11 +32,17 @@
     margin: 10px;
     padding: 5px;
     border-radius: 20px;
+    color: black;
+    text-decoration: none;
 
 }
 .res-card:hover{
     border: 1px solid black;
     cursor: pointer;
+
+}
+.rescardtext{
+    text-decoration: none;
 }
 .Logos{
     width: 200px;
@@ -77,4 +83,8 @@ margin-top: 40px;
 }
 .search{
     padding: 0px 10px;
+}
+.user-info{
+    padding: 10px;
+    border: solid black;
 }
