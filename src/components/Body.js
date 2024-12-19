@@ -1,5 +1,5 @@
 // import ResList from "../utils/mockData";
-import ResCard from "./ResCard";
+import ResCard, { ResCardpramoteed } from "./ResCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ const Body = () => {
   const [ListOfres, setListOfres] = useState([]);
   const [filteredList, setfilteredList] = useState([]);
   const [searchText, setsearchText] = useState([""]);
+  const Resturantpramoted = ResCardpramoteed(ResCard);
 
   useEffect(() => {
     fetchData();
@@ -25,29 +26,33 @@ const Body = () => {
       json.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-const OnLinestatus = useonlineStatus();
-if (OnLinestatus=== false) return <h1>please check your internet sonnection</h1>
+
+  const OnLinestatus = useonlineStatus();
+  if (OnLinestatus === false)
+    return <h1>please check your internet sonnection</h1>;
 
   //condisnal statment
-  return ListOfres.length === 0 ? (
+  return ListOfres?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="m-2 p-2">
           <input
             type="text"
-            className="search-box"
+            className=" border border-solid border-black rounded-md"
             value={searchText}
             onChange={(e) => {
-              setsearchText(e.target.value);
-      
+              setsearchText(e?.target?.value);
             }}
           />
           <button
+            className="px-4 py-1 m-4 bg-green-200 rounded-md"
             onClick={() => {
               const filterdresturant = ListOfres.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                res?.info?.name
+                  ?.toLowerCase()
+                  .includes(searchText?.toLowerCase())
               );
               //filter the rsturant card and ui
               //searchtext
@@ -57,20 +62,26 @@ if (OnLinestatus=== false) return <h1>please check your internet sonnection</h1>
             Search
           </button>
         </div>
-        <button
-          onClick={() => {
-            const filterdList = ListOfres.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setfilteredList(filterdList);
-          }}
-        >
-          Top rated restrunt
-        </button>
+        <div className="my-2 p-2">
+          <button
+            className="px-4 py-1 m-4 bg-green-200 rounded-md"
+            onClick={() => {
+              const filterdList = ListOfres.filter(
+                (res) => res.info.avgRating > 4.2
+              );
+              setfilteredList(filterdList);
+            }}
+          >
+            Top rated restrunt
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredList.map((restrunt) => (
-          <Link key={restrunt.info.id} to={"resturant/"+restrunt.info.id}><ResCard  resData={restrunt} /></Link>
+          <Link key={restrunt?.info?.id} to={"resturant/" + restrunt?.info?.id}>
+            <Resturantpramoted resData={restrunt} />
+            {/* <Resturantpramoted/> */}
+          </Link>
         ))}
       </div>
     </div>
