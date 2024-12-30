@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
@@ -7,16 +7,38 @@ import Contact from "./components/Contact.js";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Error from "./components/Error.js";
 import RestaurantInfo from "./components/ResturantInfo.js";
+import UserContext from "./utils/UserContext.js";
+import Cart from "./components/cart.js";
+import { Provider } from "react-redux";
+import appStore from "./utils/Appstore.js";
 
 const About = lazy(() => import("./components/About.js"));
 
+
 const App = () => {
+const [nmaechange,setnmaechange ] = useState(null)
+
+  useEffect(() => {
+    const data = {
+      userinfo: "marry",
+    }
+setnmaechange(data.userinfo)
+  }, []);
+  
+
+  
+
   return (
     <div className="app">
-      <Header />
+      <Provider store={appStore}>
+      <UserContext.Provider value={{ userinfo: nmaechange , setnmaechange}}>
+        <Header />
+      
       <Outlet />
+      </UserContext.Provider>
+      </Provider>
     </div>
-  );
+  ); 
 };
 
 const approuter = createBrowserRouter(
@@ -45,6 +67,10 @@ const approuter = createBrowserRouter(
         {
           path: "/resturant/:resID",
           element: <RestaurantInfo />,
+        },
+        {
+          path: "/cart",
+          element: <Cart/>,
         },
       ],
       errorElement: <Error />,

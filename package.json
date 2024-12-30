@@ -18,19 +18,30 @@
   },
   "homepage": "https://github.com/dhairyasonix/React_into#readme",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.13.2",
     "postcss": "^8.4.49",
     "process": "^0.11.10",
     "tailwindcss": "^3.4.16"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.26.3",
+    "@reduxjs/toolkit": "^2.5.0",
     "install": "^0.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.28.0"
   },
   "browserslist": [
     "last 2 version"
   ]
-  
 }

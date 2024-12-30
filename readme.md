@@ -37,3 +37,13 @@ body
     -contact address
 
 \*/
+
+# Setting up Testing in our app
+
+-Install Resct Testing Library 
+-Instatien Jest
+-Installed Babel. dependencies
+-Configure Babel
+-Contigure Parcel. Contig file to disable babel. transpilation
+-jest - npx Jest --init
+-Install jsdom Library  from rtl

@@ -1,15 +1,17 @@
 // import ResList from "../utils/mockData";
 import ResCard, { ResCardpramoteed } from "./ResCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useonlineStatus from "../utils/useOnlineStatus";
+import UserClass from "./UserClass";
+import UserContext from "../utils/UserContext";
 const Body = () => {
   const [ListOfres, setListOfres] = useState([]);
   const [filteredList, setfilteredList] = useState([]);
   const [searchText, setsearchText] = useState([""]);
   const Resturantpramoted = ResCardpramoteed(ResCard);
-
+const {setnmaechange,userinfo} = useContext(UserContext)
   useEffect(() => {
     fetchData();
   }, []);
@@ -61,6 +63,7 @@ const Body = () => {
           >
             Search
           </button>
+          
         </div>
         <div className="my-2 p-2">
           <button
@@ -74,6 +77,14 @@ const Body = () => {
           >
             Top rated restrunt
           </button>
+          <input
+            type="text"
+            className=" border border-solid border-black rounded-md"
+            value={userinfo}
+            onChange={(e) => {
+              setnmaechange(e?.target?.value);
+            }}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">

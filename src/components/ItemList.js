@@ -1,26 +1,37 @@
+import { useDispatch } from "react-redux";
 import { URL_CDN } from "../utils/Constants";
-const ItemList = ({ items }) => {
-  console.log(items);
+import { addItem,removeItem } from "../utils/cartSlice";
+const ItemList = ({ items, label }) => {
+  const dispach = useDispatch();
+  const hendleAddItem = (item)=>{
+    dispach(addItem(item))
+  }
+  const hendleRemoveItem =(id)=>{
+    dispach(removeItem({id}))
+    console.log(id)
+  }
+  // console.log(items);
   return (
     <div>
-      {items.map((items) => (
-        <div key={items.card.info.id} className="bg-gray-100">
+      {items.map((item) => (
+        <div key={item.card.info.id} className=" border-b-2">
           <div className="flex justify-between m-2 p-4">
             <div className="w-[400px] text-left">
               <span className=" py-2 font-bold">
-                {items.card.info.name} - ₹
-                {items.card.info.price / 100 ||
-                  items.card.info.defaultPrice / 100}
+                {item.card.info.name} - ₹
+                {item.card.info.price / 100 ||
+                  item.card.info.defaultPrice / 100}
               </span>
-              <p className="text-l  py-3">{items.card.info.description}</p>
+              <p className="text-xs  py-3">{item.card.info.description}</p>
             </div>
-            <div className="w-[150px] mx-4 ">
-              {items.card.info.imageId ? (
+            <div className="w-[150px]  ">
+           <div className="absolute "> <button className="bg-green-400 text-white " onClick={()=>{label === "Add+" ? hendleAddItem(item): hendleRemoveItem(item.card.info.id)}}>{label}</button> </div>
+              {item.card.info.imageId && (
                 <img
                   className="w-full rounded-md"
-                  src={URL_CDN + items.card.info.imageId}
-                />) : (<></>)}
-                <button className="absolute ">Add+</button>
+                  src={URL_CDN + item.card.info.imageId}
+                />) }
+                
             </div>
           </div>
         </div>
