@@ -1,49 +1,35 @@
-#swiggy close using react
+# Swiggy Clone using React  
+A food delivery app inspired by Swiggy, built entirely from scratch without using Create React App. It includes features like restaurant listing, search, filters, and dynamic cart management. The app integrates APIs and uses Redux for efficient state management and a seamless user experience.
 
-# parcel
+## Disclaimer  
+This app is built solely for learning purposes and is not intended for commercial use.  
 
--Dev building
--Local server
--HMR = Hot module replacment
+## Application Structure
 
-- file watching algorithm - written in c++
-  -cashing - for faster build
-- minifing file
-  -bundling file
-  -bundling
-  -comptressing
-  -error hendling (dignostic)
-
-#Foot print
-
-/\*
+```plaintext
 app
-Header
--logo
--nav bar
-body
+│
+├── Header
+│   ├── Logo
+│   ├── Navigation Bar
+|   ├── Cart
+│
+├── Body
+│   ├── Search
+│   ├── Restaurant Container
+│       ├── Restaurant Card
+│           ├── Image
+│           ├── Restaurant Name
+│           ├── Cuisine
+│           ├── Rating
+│           ├── Distance
+│
+└── Footer
+    ├── Copyright 
+    ├── Company Address
+    ├── Contact Information
 
-- search
-  -resto- container
-  -resto card
-  - img
-    -res name
-    -cusine
-    -raiting
-    distance
-    footer
-    -copyright
-    -company address
-    -contact address
-
-\*/
-
-# Setting up Testing in our app
-
--Install Resct Testing Library 
--Instatien Jest
--Installed Babel. dependencies
--Configure Babel
--Contigure Parcel. Contig file to disable babel. transpilation
--jest - npx Jest --init
--Install jsdom Library  from rtl
+# Key Features
+-Comprehensive unit testing setup using Jest.
+-Modular code structure for better scalability.
+-Fully tested components and logic.

@@ -3,7 +3,7 @@ import { URL_CDN } from "../utils/Constants";
 const ResCard = (props) => {
   const { resData } = props;
   const { cloudinaryImageId, name, cuisines, avgRating, sla } = resData?.info;
-  // console.log(resData.info);
+  // console.log(resData);
   // const resinfo{resData} = props;
   return (
     <div className="m-[7px] p-[5px] w-[200px] h-[350px] bg-gray-100 rounded-xl hover:bg-gray-300">
@@ -12,7 +12,7 @@ const ResCard = (props) => {
       </div >
       <div className="rescardtext">
       <h3 className="font-bold py-2 text-lg">{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
+      <h4 className="text-xs py-1 my-1">{cuisines.join(", ")}</h4>
       <h4>{avgRating}</h4>
       <h4>{sla.slaString}</h4>
       </div>

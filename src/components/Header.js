@@ -10,7 +10,7 @@ const Header = () => {
   const Onlinestatus = useonlineStatus();
   const {userinfo} = useContext(UserContext);
   const cart = useSelector((store)=>store.cart.items);
-  console.log(cart);
+  // console.log(cart);
   return (
     <div className="header flex justify-between bg-pink-100 shadow-md mb-2">
       <img className="w-[100px]" src={URL_LOGO}></img>
@@ -36,8 +36,8 @@ const Header = () => {
             className="m-2 px-2 hover:bg-green-300 hover:rounded-lg"
             onClick={() => {
               loginStatus == "login"
-                ? setloginStatus("logout")
-                : setloginStatus("login");
+                ? setloginStatus("Logout")
+                : setloginStatus("Login");
             }}
           >
             {" "}
