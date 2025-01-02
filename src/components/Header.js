@@ -40,8 +40,8 @@ const Header = () => {
                 : setloginStatus("Login");
             }}
           >
-            {" "}
-            {loginStatus}{" "}
+            
+            {loginStatus}
           </button>
           <li className="m-2 px-2 font-bold hover:bg-green-300 hover:rounded-lg">
             {userinfo}

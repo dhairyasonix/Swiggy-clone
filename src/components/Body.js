@@ -22,10 +22,10 @@ const {setnmaechange,userinfo} = useContext(UserContext)
     const json = await data.json();
 
     setListOfres(
-      json.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setfilteredList(
-      json.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -41,6 +41,7 @@ const {setnmaechange,userinfo} = useContext(UserContext)
       <div className="filter flex">
         <div className="m-2 p-2">
           <input
+            data-testid="searchInput"
             type="text"
             className=" border border-solid border-black rounded-md"
             value={searchText}
@@ -70,7 +71,7 @@ const {setnmaechange,userinfo} = useContext(UserContext)
             className="px-4 py-1 m-4 bg-green-200 rounded-md"
             onClick={() => {
               const filterdList = ListOfres.filter(
-                (res) => res.info.avgRating > 4.2
+                (res) => res?.info?.avgRating > 4.2
               );
               setfilteredList(filterdList);
             }}
@@ -87,8 +88,8 @@ const {setnmaechange,userinfo} = useContext(UserContext)
           />
         </div>
       </div>
-      <div className="flex flex-wrap">
-        {filteredList.map((restrunt) => (
+      <div  className="flex flex-wrap">
+        {filteredList?.map((restrunt) => (
           <Link key={restrunt?.info?.id} to={"resturant/" + restrunt?.info?.id}>
             <Resturantpramoted resData={restrunt} />
             {/* <Resturantpramoted/> */}

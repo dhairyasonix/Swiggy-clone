@@ -10,7 +10,7 @@ const RestaurantInfo = () => {
 
   const resInfo = useRestaurantInfo(resID);
 
-  const [showIndex,setshowIndex] = useState(1)
+  const [showIndex,setshowIndex] = useState(null)
   if (resInfo === null) return <Shimmer />;
 
   const { name, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info;

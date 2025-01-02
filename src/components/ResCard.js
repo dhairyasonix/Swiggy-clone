@@ -6,7 +6,7 @@ const ResCard = (props) => {
   // console.log(resData);
   // const resinfo{resData} = props;
   return (
-    <div className="m-[7px] p-[5px] w-[200px] h-[350px] bg-gray-100 rounded-xl hover:bg-gray-300">
+    <div data-testid="ResCard" className="m-[7px] p-[5px] w-[200px] h-[350px] bg-gray-100 rounded-xl hover:bg-gray-300">
       <div className="w-[190px] h-[150px] ">
         <img className="object-cover w-full  h-full rounded-xl" src={URL_CDN + cloudinaryImageId}></img>
       </div >
