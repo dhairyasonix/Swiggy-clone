@@ -6,7 +6,7 @@ This app is built solely for learning purposes and is not intended for commercia
 
 ## Application Structure
 
-```plaintext
+
 app
 │
 ├── Header
@@ -24,7 +24,7 @@ app
 │           ├── Rating
 │           ├── Distance
 │
-└── Footer
+└── Footer // this is not added
     ├── Copyright 
     ├── Company Address
     ├── Contact Information
