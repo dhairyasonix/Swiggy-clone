@@ -4,11 +4,11 @@ import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 // import About from "./components/About.js";
 import Contact from "./components/Contact.js";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
 import Error from "./components/Error.js";
 import RestaurantInfo from "./components/ResturantInfo.js";
 import UserContext from "./utils/UserContext.js";
-import Cart from "./components/cart.js";
+import Cart from "./components/Cart.js";
 import { Provider } from "react-redux";
 import appStore from "./utils/Appstore.js";
 
@@ -40,7 +40,7 @@ setnmaechange(data.userinfo)
   ); 
 };
 
-const approuter = createBrowserRouter(
+const approuter = createHashRouter(
   [
     {
       path: "/",

@@ -1,6 +1,7 @@
 {
   "name": "react",
   "version": "1.0.0",
+
   "description": "Fist react project by dhairya",
   "scripts": {
     "start": "parcel index.html",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/dhairyasonix/React_into/issues"
   },
-  "homepage": "https://github.com/dhairyasonix/React_into#readme",
+  "homepage": "https://dhairyasonix.github.io/swiggy-clone",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
