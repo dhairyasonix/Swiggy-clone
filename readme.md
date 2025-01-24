@@ -35,6 +35,7 @@ app
 -Fully tested components and logic.
 
 # api fetch
+-use CROS extention if facing issue with fetch
 -all api is prest in utils // change if swiggy has changed its api
 
 # need Help?
