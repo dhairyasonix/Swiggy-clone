@@ -29,11 +29,10 @@ setnmaechange(data.userinfo)
   
 
   return (
-    <div className="">
+    <div>
       <Provider store={appStore}>
       <UserContext.Provider value={{ userinfo: nmaechange , setnmaechange}}>
         <Header />
-      
       <Outlet />
       </UserContext.Provider>
       </Provider>

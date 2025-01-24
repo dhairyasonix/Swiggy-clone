@@ -11,7 +11,7 @@ const Body = () => {
   const [filteredList, setfilteredList] = useState([]);
   const [searchText, setsearchText] = useState([""]);
   const Resturantpramoted = ResCardpramoteed(ResCard);
-const {setnmaechange,userinfo} = useContext(UserContext)
+  const { setnmaechange, userinfo } = useContext(UserContext)
   useEffect(() => {
     fetchData();
   }, []);
@@ -64,7 +64,7 @@ const {setnmaechange,userinfo} = useContext(UserContext)
           >
             Search
           </button>
-          
+
         </div>
         <div className="my-2 p-2">
           <button
@@ -88,7 +88,7 @@ const {setnmaechange,userinfo} = useContext(UserContext)
           />
         </div>
       </div>
-      <div  className="flex flex-wrap">
+      <div className="flex flex-wrap">
         {filteredList?.map((restrunt) => (
           <Link key={restrunt?.info?.id} to={"resturant/" + restrunt?.info?.id}>
             <Resturantpramoted resData={restrunt} />
