@@ -5,7 +5,7 @@
   "description": "Fist react project by dhairya",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url /swiggy-clone/",
     "test": "jest",
     "watch-test": "jest --watch"
   },
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/dhairyasonix/React_into/issues"
   },
-  "homepage": "https://dhairyasonix.github.io/swiggy-clone",
+  "homepage": "https://dhairyasonix.github.io/Swiggy-clone",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
